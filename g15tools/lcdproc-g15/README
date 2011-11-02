@@ -1,0 +1,13 @@
+This is a patch against lcdproc CVS HEAD.  Apply the patch and configure with 
+--enable-drivers=g15.  This driver requires g15daemon-1.2 and libg15render.  
+This driver is nearly feature complete, and will soon be submitted for 
+inclusion in lcdproc.
+
+The Keymap is as follows:
+
+Escape = G1
+Enter  = L1
+Left   = L2
+Up     = L3
+Down   = L4
+Right  = L5

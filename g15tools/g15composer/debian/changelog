@@ -1,0 +1,55 @@
+g15composer (3.2-1) edgy; urgency=low
+  * Use libg15daemon_client for status commands - fixes MP etc
+  * Stop sending blank buffers in addition to commands.
+
+ -- Mike Lampard <mlampard@users.sourceforge.net> Sat, 26 Jan 2008 11:36:04 +1030
+
+g15composer (3.1-1) edgy; urgency=low
+
+  * Add support for new WBMP and bignum routines in libg15render-1.2
+  * Improve FIFO handling to recover dangling FIFOs
+  * Add -u/--user -g/--group command line options to change effective UID/GID
+  * Add -r command line option to reuse running g15composer instance
+
+ -- Anthony J. Mirabella <mirabeaj@gmail.com>  Mon, 01 Jan 2007 17:16:35 -0500
+
+g15composer (3.0-1) edgy; urgency=low
+
+  * Reimplement g15composer using flex and bison
+  * Text may now be right justified with the TO command
+  * Some command syntax has changed.  See README for details.
+
+ -- Anthony J. Mirabella <mirabeaj@gmail.com>  Thu, 26 Oct 2006 17:06:13 -0400
+
+g15composer (2.1-1) dapper; urgency=low
+
+  * Move parts of G15Composer to G15Base
+  * Implement simplified G15Control
+  * Handle FIFO creation and deletion
+  * Use simplified control pipe if started with -b
+
+ -- Anthony J. Mirabella <mirabeaj@gmail.com>  Fri, 20 Oct 2006 05:29:31 -0400
+
+g15composer (2.0-1) dapper; urgency=low
+
+  * Refactor code into G15Composer class
+  * Fix font rendering bug
+  * Add SN and SC commands to create and destry screens
+  - Remove g15script support (this can be done with shell scripts and/or cat)
+
+ -- Anthony J. Mirabella <mirabeaj@gmail.com>  Wed, 18 Oct 2006 23:18:19 -0400
+
+g15composer (1.1-1) dapper; urgency=low
+
+  * Enable control of LCD contrast and backlight
+  * Enable control of M1-M3 LEDs
+  * Verify that we are actually given a fifo to read from
+
+ -- Anthony J. Mirabella <mirabeaj@gmail.com>  Sat, 07 Oct 2006 01:51:29 -0400
+
+g15composer (1.0.1-1) dapper; urgency=low
+
+  * Initial release 
+
+ -- Anthony J. Mirabella <mirabeaj@gmail.com>  Thu, 28 Sep 2006 04:46:06 -0400
+

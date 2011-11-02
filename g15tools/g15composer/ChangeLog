@@ -1,0 +1,34 @@
+3.2
+* Use libg15daemon_client for status commands - fixes MP etc
+* Stop sending blank buffers in addition to commands.
+
+3.1
+* Add support for new WBMP and bignum routines in libg15render-1.2
+* Improve FIFO handling to recover dangling FIFOs
+* Add -u/--user -g/--group command line options to change effective UID/GID
+* Add -r command line option to reuse running g15composer instance
+
+3.0
+* Reimplement g15composer using flex and bison
+* Text may now be right justified with the TO command
+* Some command syntax has changed.  See README for details.
+
+2.1
+* Move parts of G15Composer to G15Base
+* Implement simplified G15Control
+* Handle FIFO creation and deletion
+* Use simplified control pipe if started with -b
+
+2.0
+* Refactor code into G15Composer class
+* Fix font rendering bug
+* Add SN and SC commands to create and destry screens
+- Remove g15script support (this can be done with shell scripts and/or cat)
+
+1.1
+* Enable control of LCD contrast and backlight
+* Enable control of M1-M3 LEDs
+* Verify that we are actually given a fifo to read from
+
+1.0
+* Initial Release

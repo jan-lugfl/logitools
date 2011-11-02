@@ -1,0 +1,39 @@
+g15cat ver. 1.1 - GNU Software - (c) 2007 Antonio Bartolini
+part of G15tools - http://g15tools.sourceforge.net/
+
+How to install:
+
+ ./configure && make
+
+and (as root):
+
+ make install
+
+How to uninstall (as root):
+
+ make uninstall
+
+Usage:
+  g15cat [-F FILENAME] [-s SECONDS] [-f FORMAT] [-c NUMCHARS] [-t] [-d SECONDS]
+
+  Where possibile options are:
+  -F FILENAME = Read Filename as Input. [default STDIN]
+  -s SECONDS = Wait n. SECONDS until exit. [default 5]
+  -f FORMAT = S, M or L. [default S]
+  -c NUMCHARS = Cut first NUMCHARS characters from the begin of each line.
+  -t = Display data in Top-Down mode.
+  -d SECONDS = Wait n. SECONDS before printing each line (Slow mode).
+  -h = Display this help.
+
+Report bugs to robynhub@gmail.com
+
+ g15cat is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ g15cat is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
