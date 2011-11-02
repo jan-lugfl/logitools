@@ -1,0 +1,5 @@
+TODO list for g15tools modification
+
+* Migrate to CMake
+* Fix G15Macros to fix the LCD Corruption Bug
+* Fix G15Daemon for better clock modification and to make the rotate key the default button
