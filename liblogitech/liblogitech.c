@@ -21,7 +21,7 @@
 */
 
 #include <pthread.h>
-#include "libg15.h"
+#include "liblogitech.h"
 #include <stdio.h>
 #include <stdarg.h>
 #include <usb.h>

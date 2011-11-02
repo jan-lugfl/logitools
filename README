@@ -1,5 +1,5 @@
 ==============================================================================================
-Logitech Tools (logitools)
+logitools
 ==============================================================================================
 
 This repo contains a modified version of the g15tools. As I feel the upstream is being slow at
@@ -11,9 +11,7 @@ Planned Features
 * Rename to logitools as it fits more then g15tools as it supports more then just the G15
   Keyboard. This will rename the following
 
-    libg15 -> liblogitech (a Symlink to libg15 will keep compatability with older apps
-    still off the libg15 toolset as im not destroying compatability)
-
+    libg15 -> liblogitech
     g15daemon -> logitechdaemon
 
 * Adding better G510 support.
@@ -25,3 +23,25 @@ Planned Features
 
 I might also add mouse support for the G500 as it has programmable keys as well for macros,
 tho this is just a planned addition.
+
+==============================================================================================
+NOTE: The Attic just contains code I have not converted to CMake or renamed things or added
+      new code. Mostly anything here will not build at all.
+==============================================================================================
+
+logitools - Tools for Logitech Gaming Keyboards
+Copyright (C) 2011 Michael Manley ; 2006-2007 The G15tools Project - g15tools.sf.net
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.

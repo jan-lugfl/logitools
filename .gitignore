@@ -27,3 +27,5 @@ Makefile.in
 
 # Object Folders
 obj-src
+
+*~
