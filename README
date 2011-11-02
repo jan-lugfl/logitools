@@ -12,7 +12,7 @@ Planned Features
   Keyboard. This will rename the following
 
     libg15 -> liblogitech
-    g15daemon -> logitechdaemon
+    g15daemon -> logitoolsdaemon
 
 * Adding better G510 support.
 * Adding support to other Logitech Keyboards that have macro recording support, even if they
