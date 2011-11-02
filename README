@@ -1,0 +1,27 @@
+==============================================================================================
+Logitech Tools (logitools)
+==============================================================================================
+
+This repo contains a modified version of the g15tools. As I feel the upstream is being slow at
+bugfixes and new inclusions I forked it off. One of the biggest changes is better G510 support
+when I obtain a G510 Keyboard and to also support the G110's Macro Keys by adding checks to
+the LCD screen to know if its a LCD specific keyboard.
+
+Planned Features
+* Rename to logitools as it fits more then g15tools as it supports more then just the G15
+  Keyboard. This will rename the following
+
+    libg15 -> liblogitech (a Symlink to libg15 will keep compatability with older apps
+    still off the libg15 toolset as im not destroying compatability)
+
+    g15daemon -> logitechdaemon
+
+* Adding better G510 support.
+* Adding support to other Logitech Keyboards that have macro recording support, even if they
+  don't have LCD Screens.
+* No Longer use autotools (This is a personal preference, I have a huge huge dislike for
+  autotools and wishes everyone would just ditch it. Its not cause its a GNU project, 
+  its just the worse poorly written software and is a pain to maintain projects using it.)
+
+I might also add mouse support for the G500 as it has programmable keys as well for macros,
+tho this is just a planned addition.
