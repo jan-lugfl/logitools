@@ -1,0 +1,28 @@
+pkgname=liblogitech
+pkgver=1.0
+pkgrel=1
+url="http://michael-manley.github.com/logitools"
+pkgdesc="Provides low-level access to the Logitech G15 and G11 keyboards and Z10 speakers"
+arch=('i686' 'x86_64')
+license=('GPL2')
+depends=('libusb')
+makedepends=('cmake')
+provides=('libg15' 'libg15-svn')
+conflicts=('libg15' 'libg15-svn')
+source=("http://michael-manley.github.com/logitools/files/$pkgname-$pkgver.tar.bz2")
+md5sums=('md5sum')
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  mkdir obj-src
+  cd obj-src
+
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}/obj-src"
+
+  make DESTDIR="${pkgdir}" install
+}

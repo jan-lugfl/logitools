@@ -1,0 +1,28 @@
+pkgname=liblogitechrender
+pkgver=1.0
+pkgrel=1
+url="http://michael-manley.github.com/logitools"
+pkgdesc="A small graphics library optimised for drawing on an LCD"
+arch=('i686' 'x86_64')
+license=('GPL2')
+depends=('libusb')
+makedepends=('cmake')
+provides=('libg15render' 'libg15render-svn')
+conflicts=('libg15render' 'libg15render-svn')
+source=("http://michael-manley.github.com/logitools/files/$pkgname-$pkgver.tar.bz2")
+md5sums=('md5sum')
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  mkdir obj-src
+  cd obj-src
+
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}/obj-src"
+
+  make DESTDIR="${pkgdir}" install
+}

@@ -21,6 +21,7 @@
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
-#define PACKAGE_STRING "@PACKAGE_STRING@"
+#define G15FONT_DIR "@G15FONT_DIR@"
+#cmakedefine TTF_SUPPORT
 
 #endif

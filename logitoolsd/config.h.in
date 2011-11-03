@@ -21,6 +21,9 @@
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
+#define HAVE_CONFIG_H
+#define PLUGINDIR "@PLUGINDIR@"
+#define DATADIR "@DATADIR@"
 #define PACKAGE_STRING "@PACKAGE_STRING@"
-
+#define VERSION "1.0"
 #endif
