@@ -9,7 +9,7 @@ set(PLUGINDIR "${CMAKE_INSTALL_PREFIX}/share/logitechd/plugins")
 set(DATADIR "${CMAKE_INSTALL_PREFIX}/share/logitechd")
 
 configure_file("${PROJECT_SOURCE_DIR}/config.h.in" "${PROJECT_BINARY_DIR}/config.h")
-#configure_file("${PROJECT_SOURCE_DIR}/liblogitechrender.pc.in" "${PROJECT_BINARY_DIR}/liblogitechrender.pc" @ONLY)
+configure_file("${PROJECT_SOURCE_DIR}/liblogitoolsdl.pc.in" "${PROJECT_BINARY_DIR}/liblogitoolsdl.pc" @ONLY)
 
 include_directories(${LIBLOGITECH_INCLUDE_DIRS} ${LIBLOGITECHRENDER_INCLUDE_DIRS} "${PROJECT_BINARY_DIR}")
 
@@ -22,9 +22,9 @@ add_library(g15_plugin_clock SHARED plugins/g15_plugin_clock.c)
 
 install(TARGETS logitoolsd logitoolsdl RUNTIME DESTINATION bin LIBRARY DESTINATION lib)
 install(TARGETS g15_plugin_clock LIBRARY DESTINATION share/logitechd/plugins)
-#install(FILES "${PROJECT_BINARY_DIR}/liblogitechrender.pc" DESTINATION lib/pkgconfig)
+install(FILES "${PROJECT_BINARY_DIR}/liblogitoolsdl.pc" DESTINATION lib/pkgconfig)
 install(FILES liblogitoolsdl/logitoolsdl.h DESTINATION include/logitools)
-#install(FILES cmake/Modules/FindLibLogitechRender.cmake DESTINATION share/cmake/Modules)
+install(FILES cmake/Modules/FindLibLogiToolsDL.cmake DESTINATION share/cmake/Modules)
 install(FILES Documentation/logitoolsd.1 DESTINATION man/man1)
 install(FILES Documentation/logitoolsdl.3 DESTINATION man/man3)
 install(FILES images/g15logo2.wbmp DESTINATION share/logitechd/splash)
