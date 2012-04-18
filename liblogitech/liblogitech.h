@@ -167,6 +167,7 @@ struct libg15_devices_t {
   int setLCDBrightness(unsigned int level);
   int setKBBrightness(unsigned int level);  
   int setG510LEDColor(unsigned char r, unsigned char g, unsigned char b);  
+  int setG110LEDColor(unsigned char color, unsigned char level);
 
   /* Please be warned
    * the g15 sends two different usb msgs for each key press

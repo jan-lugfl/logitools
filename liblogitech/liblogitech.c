@@ -620,6 +620,25 @@ int setG510LEDColor(unsigned char r, unsigned char g, unsigned char b)
     return retval;
 }
 
+/*
+	Sets the backlight color of the G110 keyboard
+	color is the color tome from 0x00 -> red to 0xff -> blue
+	brightness is the 8 bit brightness level (0x0 - 0xe)
+*/
+int setG110LEDColor(unsigned char color, unsigned char brightness)
+{
+    int retval = 0;
+    unsigned char usb_data[] = { 7, 0, 0, 0, 0 };
+
+    usb_data[1] = color;
+    usb_data[4] = brightness;
+
+    pthread_mutex_lock(&libusb_mutex);
+    retval = usb_control_msg(keyboard_device, USB_TYPE_CLASS + USB_RECIP_INTERFACE, 9, 0x307, 0, (char*)usb_data, 5, 10000);
+    pthread_mutex_unlock(&libusb_mutex);
+    return retval;
+}
+
 static unsigned char g15KeyToLogitechKeyCode(int key)
 {
    // first 12 G keys produce F1 - F12, thats 0x3a + key
