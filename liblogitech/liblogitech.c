@@ -1042,6 +1042,9 @@ static void processKeyEvent4Byte(unsigned int *pressed_keys, unsigned char *buff
 
 		if (buffer[3]&0x1)
 			*pressed_keys |= G15_KEY_LIGHT;
+
+		if (buffer[3]&0x2)
+			*pressed_keys |= G15_KEY_HEADSETMUTE;
 	}
 }
 

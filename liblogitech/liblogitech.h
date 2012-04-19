@@ -142,7 +142,8 @@ struct libg15_devices_t {
     G15_KEY_L4  = 1<<25,
     G15_KEY_L5  = 1<<26,
 
-    G15_KEY_LIGHT = 1<<27
+    G15_KEY_LIGHT = 1<<27,
+    G15_KEY_HEADSETMUTE = 1<<28
 
     //need to add them to the enum but not enough positions left
     //  G15_KEY_JOYBL = 1<<32,
