@@ -623,7 +623,7 @@ int setG510LEDColor(unsigned char r, unsigned char g, unsigned char b)
 /*
 	Sets the backlight color of the G110 keyboard
 	color is the color tome from 0x00 -> red to 0xff -> blue
-	brightness is the 8 bit brightness level (0x0 - 0xe)
+	brightness is the 8 bit brightness level (0x00 - 0x0e)
 */
 int setG110LEDColor(unsigned char color, unsigned char brightness)
 {
