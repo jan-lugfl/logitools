@@ -5,3 +5,5 @@
 	Tyler (schitzo) - provided patch that fixes cancellation of an in-progress recording via any of the M keys, and moves repeated code into their own functions.
 
 	Daniel Sjoholm <steelside@users.sourceforge.net> - Multiple configuration addition and bugfixes
+
+	Jan Boysen <jan@lugfl.de> - Changed buildsystem to CMake

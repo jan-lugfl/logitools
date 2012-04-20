@@ -1,5 +1,5 @@
 /*
-        This file is part of g15daemon.
+        This file is part of logitoolsd.
 
         g15daemon is free software; you can redistribute it and/or modify
         it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
         and arbitrates LCD display.  Allows for multiple simultaneous clients.
         Client screens can be cycled through by pressing the 'L1' key.
 
-        This is a macro recorder and playback utility for the G15 and g15daemon.
+        This is a macro recorder and playback utility for the G15 and logitoolsd.
 */
 
 #include <unistd.h>
@@ -50,9 +50,9 @@
 #endif
 #include <X11/XF86keysym.h>
 
-#include <g15daemon_client.h>
-#include <libg15.h>
-#include <libg15render.h>
+#include <logitoolsdl.h>
+#include <liblogitech.h>
+#include <liblogitechrender.h>
 #include "config.h"
 #include "g15macro_small.xbm"
 
@@ -61,7 +61,7 @@
 #define XK_LATIN2
 #include <X11/keysymdef.h>
 
-#include "g15macro.h"
+#include "logitools-macro.h"
 
 int leaving = 0;
 int display_timeout=500;
@@ -1329,7 +1329,7 @@ void g15macro_sighandler(int sig) {
 }
 
 void helptext() {
-  printf("G15Macro %s\n",PACKAGE_VERSION);
+  printf("LogiTools-Macro %s\n",VERSION);
   printf("\n--user (-u) \"username\" run as user \"username\"\n");
   printf("--dump (-d) dump current configuration to stdout\n");
   printf("--debug (-g) print debugging information\n");
@@ -1441,7 +1441,7 @@ int main(int argc, char **argv)
         }
 
         if (!strncmp(argv[i], "-v",2) || !strncmp(argv[i], "--version",9)) {
-          printf("G15Macro version %s\n\n",PACKAGE_VERSION);
+          printf("LogiTools-Macro version %s\n\n",VERSION);
           exit(0);
         }
 

@@ -51,9 +51,9 @@
 #endif
 #include <X11/XF86keysym.h>
 
-#include <g15daemon_client.h>
-#include <libg15.h>
-#include <libg15render.h>
+#include <logitoolsdl.h>
+#include <liblogitech.h>
+#include <liblogitechrender.h>
 #include "config.h"
 
 #define  XK_MISCELLANY

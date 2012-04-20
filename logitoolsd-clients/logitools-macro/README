@@ -1,8 +1,8 @@
-G15macro:
+logitools-macro:
 
-A simple Macro recording/playback app for G15Daemon.
+A simple Macro recording/playback app for LogiToolsD.
 
-Requires X11, libg15render, and the XTEST extension headers to compile, and
+Requires X11, liblogitechrender, and the XTEST extension headers to compile, and
 XTEST extension in order to function.
 
 Features:

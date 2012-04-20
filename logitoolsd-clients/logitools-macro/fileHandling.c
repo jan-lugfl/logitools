@@ -45,9 +45,9 @@
 #include <math.h>
 #include <ctype.h>
 
-#include <g15daemon_client.h>
-#include <libg15.h>
-#include <libg15render.h>
+#include <logitoolsdl.h>
+#include <liblogitech.h>
+#include <liblogitechrender.h>
 #include "config.h"
 
 #define  XK_MISCELLANY
@@ -55,7 +55,7 @@
 #define XK_LATIN2
 #include <X11/keysymdef.h>
 
-#include "g15macro.h"
+#include "logitools-macro.h"
 
 unsigned char* getConfigName(unsigned int id)
 {
