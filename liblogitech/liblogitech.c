@@ -45,7 +45,7 @@ const libg15_devices_t g15_devices[] = {
     DEVICE("Logitech G15 v2",0x46d,0xc227,G15_LCD|G15_KEYS|G15_DEVICE_5BYTE_RETURN),
     DEVICE("Logitech Gamepanel",0x46d,0xc251,G15_LCD|G15_KEYS|G15_DEVICE_IS_SHARED),
     DEVICE("Logitech G13",0x46d,0xc21c,G15_LCD|G15_KEYS|G15_DEVICE_G13),
-    DEVICE("Logitech G110",0x46d,0xc22b,G15_KEYS),
+    DEVICE("Logitech G110",0x46d,0xc22b,G15_KEYS|G15_DEVICE_G110),
     DEVICE("Logitech G510",0x46d,0xc22d,G15_LCD|G15_KEYS|G15_DEVICE_IS_SHARED|G15_DEVICE_G510), /* without audio activated */
     DEVICE("Logitech G510",0x46d,0xc22e,G15_LCD|G15_KEYS|G15_DEVICE_IS_SHARED|G15_DEVICE_G510), /* with audio activated */
     DEVICE(NULL,0,0,0)
@@ -539,17 +539,30 @@ int setLCDContrast(unsigned int level)
 int setLEDs(unsigned int leds)
 {
     int retval = 0;
-    unsigned char m_led_buf[4] = { 2, 4, 0, 0 };
-    m_led_buf[2] = ~(unsigned char)leds;
+    int cmd_size = 4;
+    unsigned int cmd_code = 0;
+    unsigned char m_led_buf[4] = { 0, 0, 0, 0 };
+    if(g15DeviceCapabilities() & G15_DEVICE_G110)
+    {
+        m_led_buf[0] = 3;
+        m_led_buf[1] = (unsigned char)leds;
+        cmd_size = 2;
+        cmd_code = 0x303;
+    }else
+    {
+        m_led_buf[0] = 2;
+        m_led_buf[1] = 4;
+        m_led_buf[2] = ~(unsigned char)leds;
+        cmd_code = 0x302;
 
-    if(g15DeviceCapabilities()&G15_DEVICE_G510)
-        setG510LEDColor(0, 255, 0);
-
+        if(g15DeviceCapabilities()&G15_DEVICE_G510)
+           setG510LEDColor(0, 255, 0);
+    }
     if(shared_device>0)
         return G15_ERROR_UNSUPPORTED;
 
     pthread_mutex_lock(&libusb_mutex);
-    retval = usb_control_msg(keyboard_device, USB_TYPE_CLASS + USB_RECIP_INTERFACE, 9, 0x302, 0, (char*)m_led_buf, 4, 10000);
+    retval = usb_control_msg(keyboard_device, USB_TYPE_CLASS + USB_RECIP_INTERFACE, 9, cmd_code, 0, (char*)m_led_buf, cmd_size, 10000);
     pthread_mutex_unlock(&libusb_mutex);
     return retval;
 }
