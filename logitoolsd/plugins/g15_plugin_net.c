@@ -37,8 +37,8 @@
 #include <fcntl.h>
 
 #include <errno.h>
-#include <libg15.h>
-#include <g15daemon.h>
+#include <liblogitech.h>
+#include "../logitoolsd/logitoolsd.h"
 
 static int leaving = 0;
 static int server_events(plugin_event_t *myevent);
