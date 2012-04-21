@@ -33,15 +33,13 @@
 #include <unistd.h>
 
 #include <config.h>
-#include <g15daemon.h>
+#include "../logitoolsd/logitoolsd.h"
 #include <pwd.h>
 
-#ifdef HAVE_CONFIG_H
-#ifdef HAVE_LINUX_UINPUT_H
 #include <linux/input.h>
 #include <linux/uinput.h>
 
-#include <libg15.h>
+#include <liblogitech.h>
 
 static int uinp_fd = -1;
 static config_section_t *uinput_cfg=NULL;
@@ -86,13 +84,8 @@ static int g15_init_uinput(void *plugin_args) {
     memset(&uinp,0,sizeof(uinp));
     strncpy(uinp.name, "G15 Extra Keys", UINPUT_MAX_NAME_SIZE);
 
-#ifdef HAVE_UINPUT_USER_DEV_ID
     uinp.id.version = 4;
     uinp.id.bustype = BUS_USB;
-#else
-    uinp.idversion = 4;
-    uinp.idbus = BUS_USB;
-#endif 
 
     ioctl(uinp_fd, UI_SET_EVBIT, EV_KEY);
 
@@ -156,11 +149,6 @@ static void g15_uinput_keyup(unsigned char code)
 
     void (*keyup)(unsigned char code) = &g15_uinput_keyup;
     void (*keydown)(unsigned char code) = &g15_uinput_keydown;
-#else
-    void keyup(unsigned char code) { printf("Extra Keys not supported due to missing Uinput.h\n"); }
-    void keydown(unsigned char code) { printf("Extra Keys not supported due to missing Uinput.h\n"); }
-#endif
-#endif
     
 static void g15_process_keys(g15daemon_t *masterlist, unsigned int currentkeys, unsigned int lastkeys)
 {
